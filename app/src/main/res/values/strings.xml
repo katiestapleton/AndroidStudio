@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UIUX Android Sample - Katie Stapleton</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="buttonSayHello">Say Hello</string>
+    <string name="nameText">Hello</string>
+    <string name="textGreeting">Enter a message</string>
+</resources>
