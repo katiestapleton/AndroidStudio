@@ -1,5 +1,6 @@
 package com.zybooks.uiuxandroid_katies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,14 +15,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void sayHello(View view) {
-        TextView outputText = findViewById(R.id.textGreeting);
-        EditText inputText = findViewById(R.id.nameText);
         Button button = findViewById(R.id.buttonSayHello);
 
-        String sayHelloMessage = (getString(R.string.welcomeGreeting) + inputText.getText());
-        button.setOnClickListener(view1 -> outputText.setText(sayHelloMessage));
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView outputText = findViewById(R.id.textGreeting);
+                EditText inputText = findViewById(R.id.nameText);
+
+                if (inputText.getText() != null) {
+                    String sayHelloMessage = (getString(R.string.welcomeGreeting) + inputText.getText());
+                    outputText.setText(sayHelloMessage);
+                } else {
+                    outputText.setError("You must enter a name");
+                }
+            }
+        });
     }
+
+
 }

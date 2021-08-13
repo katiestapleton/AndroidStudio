@@ -49,11 +49,11 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:onClick="sayHello"
         android:text="@string/buttonSayHello"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textGreeting" />
+       <!--removed onClick="sayHello" and replaced with event listener-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
