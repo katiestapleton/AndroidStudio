@@ -16,25 +16,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = findViewById(R.id.buttonSayHello);
+        Button sayHelloButton = findViewById(R.id.buttonSayHello);
 
-
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TextView outputText = findViewById(R.id.textGreeting);
-                EditText inputText = findViewById(R.id.nameText);
-
-                if (inputText.getText() != null) {
-                    String sayHelloMessage = (getString(R.string.welcomeGreeting) + inputText.getText());
-                    outputText.setText(sayHelloMessage);
-                } else {
-                    outputText.setError("You must enter a name");
-                }
-            }
-        });
+        sayHelloButton.setOnClickListener(sayHello);
     }
 
 
+    private View.OnClickListener sayHello = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            TextView outputText = findViewById(R.id.textGreeting);
+            EditText inputText = findViewById(R.id.nameText);
+
+            if (inputText.getText() != null) {
+                String sayHelloMessage = (getString(R.string.welcomeGreeting) + inputText.getText());
+                outputText.setText(sayHelloMessage);
+            } else {
+                outputText.setError("You must enter a name");
+            }
+        }
+    };
 }
