@@ -18,7 +18,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="action_register_user">Create an account</string>
-    <string name="login_select">"&#160; OR &#160;  "</string>
+    <string name="login_select">&#160;OR&#160;</string>
     <string name="usernameLoginText">Username:</string>
     <string name="passwordLoginText">Password:</string>
     <string name="app_name">AppEventTracking</string>
