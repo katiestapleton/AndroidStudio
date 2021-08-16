@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">AppEventTracking</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -22,4 +21,6 @@
     <string name="login_select">"&#160; OR &#160;  "</string>
     <string name="usernameLoginText">Username:</string>
     <string name="passwordLoginText">Password:</string>
+    <string name="app_name">AppEventTracking</string>
+    <string name="AppNameTitle">Life\'s Event Tracker</string>
 </resources>
