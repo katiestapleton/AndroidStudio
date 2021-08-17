@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.katie.appeventtracking">
 
-    <!--FIXME: possibly security issue when exported set to true. other apps can retrieve data-->
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,15 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppEventTracking">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:exported="true"
+            android:label="@string/app_name"
             android:theme="@style/Theme.AppEventTracking.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

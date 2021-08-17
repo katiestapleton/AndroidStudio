@@ -23,4 +23,19 @@
     <string name="passwordLoginText">Password:</string>
     <string name="app_name">AppEventTracking</string>
     <string name="AppNameTitle">Life\'s Event Tracker</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Preferences</string>
+    <string name="sync_header">Permissions</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Receive notifications</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Allow notification</string>
+    <string name="attachment_title">Send and view SMS messages</string>
+    <string name="attachment_summary_on">Receive automated notifications using SMS messaging system within the device</string>
+    <string name="attachment_summary_off">Only receive notifications within application while app is running</string>
 </resources>
