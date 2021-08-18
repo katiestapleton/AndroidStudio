@@ -5,6 +5,7 @@
     <string name="secondFrag_manageEvent">Manage Event Details</string>
     <string name="appName">AppEventTracking</string>
     <string name="AppNameTitle">Life\'s Event Tracker</string>
+    <string name="loginTitle">User account login</string>
 
     <!-- Strings used for event navigation -->
     <string name="submit">Submit</string>
@@ -51,5 +52,6 @@
     <string name="messagePermission">Send and view SMS messages</string>
     <string name="message_summaryOn">Receive automated notifications using SMS messaging system within the device</string>
     <string name="message_summaryOff">Only receive notifications within application while app is running</string>
+
 
 </resources>

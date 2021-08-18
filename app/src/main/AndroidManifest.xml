@@ -3,24 +3,25 @@
     package="com.katie.appeventtracking">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppEventTracking">
-        <activity
+        android:theme="@style/Theme.AppEventTracking"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/my_backup_rules">
+    <activity
             android:name=".SettingsActivity"
             android:exported="true"
             android:label="@string/settings"></activity>
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
-            android:label="@string/eventLocation" />
+            android:label="@string/loginTitle" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/appName"
+            android:label="@string/AppNameTitle"
             android:theme="@style/Theme.AppEventTracking.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
