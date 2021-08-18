@@ -1,41 +1,55 @@
 <resources>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="action_register_user">Create an account</string>
-    <string name="login_select">&#160;OR&#160;</string>
-    <string name="usernameLoginText">Username:</string>
-    <string name="passwordLoginText">Password:</string>
-    <string name="app_name">AppEventTracking</string>
+    <!-- Screen titles-->
+    <string name="firstFrag_eventOverview">Event Overview</string>
+    <string name="secondFrag_manageEvent">Manage Event Details</string>
+    <string name="appName">AppEventTracking</string>
     <string name="AppNameTitle">Life\'s Event Tracker</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Strings used for event navigation -->
+    <string name="submit">Submit</string>
+    <string name="read">Review</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+
+    <!-- Username and password-->
+    <string name="usernameLoginText">Username:</string>
+    <string name="promptEmail">Email</string>
+    <string name="invalidUsername">Not a valid username</string>
+
+    <string name="passwordLoginText">Password:</string>
+    <string name="promptPassword">Password</string>
+    <string name="invalidPassword">Password must be >5 characters</string>
+
+    <!-- user account login-->
+    <string name="SignIn">Sign in</string>
+    <string name="loginSelectOption">&#160;OR&#160;</string>
+    <string name="registerUser">Create an account</string>
+    <string name="loginFailed">"Login failed"</string>
+    <string name="welcome">"Welcome !"</string>
+
+    <!-- Event information -->
+    <string name="calendarDate">Date</string>
+    <string name="eventTime">Time</string>
+    <string name="eventName">Event Name</string>
+    <string name="eventDescribe">Description</string>
+    <string name="eventLocation">Location</string>
+    <string name="dateFormat">mm/dd/yy</string>
+    <string name="timeFormat">hh:mm</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Preferences</string>
-    <string name="sync_header">Permissions</string>
+    <string name="settings">Settings</string>
+    <string name="preferences">Preferences</string>
+    <string name="permissions">Permissions</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Receive notifications</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="notificationsTitle">Receive notifications</string>
+    <string name="replyTitle">Default reply action</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Allow notification</string>
-    <string name="attachment_title">Send and view SMS messages</string>
-    <string name="attachment_summary_on">Receive automated notifications using SMS messaging system within the device</string>
-    <string name="attachment_summary_off">Only receive notifications within application while app is running</string>
+    <!-- Select preferences/permissions -->
+    <string name="notificationPermission">Allow notification(s)</string>
+    <string name="messagePermission">Send and view SMS messages</string>
+    <string name="message_summaryOn">Receive automated notifications using SMS messaging system within the device</string>
+    <string name="message_summaryOff">Only receive notifications within application while app is running</string>
+
 </resources>

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.katie.appeventtracking.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/firstFrag_eventOverview"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.katie.appeventtracking.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/secondFrag_manageEvent"
         tools:layout="@layout/fragment_second">
 
         <action
