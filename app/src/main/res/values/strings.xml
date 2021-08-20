@@ -13,6 +13,7 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
 
+
     <!-- Username and password-->
     <string name="usernameLoginText">Username:</string>
     <string name="promptEmail">Email</string>
@@ -52,6 +53,13 @@
     <string name="messagePermission">Send and view SMS messages</string>
     <string name="message_summaryOn">Receive automated notifications using SMS messaging system within the device</string>
     <string name="message_summaryOff">Only receive notifications within application while app is running</string>
+
+    <!--new Strings-->
+    <string name="add">add</string>
+    <string name="userAccount">Account</string>
+    <string name="userHelp">Help</string>
+    <string name="returnPrevious">Return</string>
+    <string name="PreviewApp">preview app</string>
 
 
 </resources>
