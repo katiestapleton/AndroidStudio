@@ -7,16 +7,19 @@
         android:id="@+id/userAccount"
         android:orderInCategory="100"
         android:title="@string/userAccount"
+        android:parentActivityName=".MainActivity"
         app:showAsAction="never" />
     <item
         android:id="@+id/changeSettings"
         android:orderInCategory="100"
         android:title="@string/settings"
+        android:parentActivityName=".MainActivity"
         app:showAsAction="never"/>
     <item
         android:id="@+id/requestHelp"
         android:orderInCategory="100"
         android:title="@string/userHelp"
+        android:parentActivityName=".MainActivity"
         app:showAsAction="never" />
 
 </menu>

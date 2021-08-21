@@ -14,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.katie.appeventtracking.databinding.ActivityMainBinding;
+import com.katie.appeventtracking.ui.login.LoginActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        //setContentView(R.layout.activity_main);
 
         setSupportActionBar(binding.toolbar);
 
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        // floating button
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
     }
 
     @Override
@@ -71,6 +73,18 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        if (id == R.id.userAccount) {
+            Intent myAccount = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(myAccount);
+            return true;
+        }
+
+        if (id == R.id.changeSettings) {
+            Intent mySettings = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(mySettings);
+            return true;
+        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.requestHelp) {

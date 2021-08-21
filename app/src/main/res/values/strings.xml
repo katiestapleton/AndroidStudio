@@ -59,7 +59,7 @@
     <string name="userAccount">Account</string>
     <string name="userHelp">Help</string>
     <string name="returnPrevious">Return</string>
-    <string name="PreviewApp">preview app</string>
+    <string name="PreviewApp">Click here to preview app instead.</string>
 
 
 </resources>
