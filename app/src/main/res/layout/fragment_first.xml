@@ -95,6 +95,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="60dp" />
 
+        
     // guidelines to assist in layouts
 
 </androidx.constraintlayout.widget.ConstraintLayout>
