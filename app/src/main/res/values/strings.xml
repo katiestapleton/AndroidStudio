@@ -36,7 +36,7 @@
     <string name="eventName">Event Name</string>
     <string name="eventDescribe">Description</string>
     <string name="eventLocation">Location</string>
-    <string name="dateFormat">mm/dd/yy</string>
+    <string name="dateFormat">mm-dd-yyyy</string>
     <string name="timeFormat">hh:mm</string>
 
     <!-- Preference Titles -->
