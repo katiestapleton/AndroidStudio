@@ -26,14 +26,14 @@ public class Events<E> implements Serializable {
 
         // setters and getters
 
-        public int getData_eventID() {
+        public int getEventID() {
             return data_eventID;}
 
-        public void setData_eventID(int eventID) {
+        public void setEventID(int eventID) {
             this.data_eventID = eventID;
         }
 
-        public String getData_eventDate() {
+        public String getEventDate() {
             return data_eventDate;
         }
 
@@ -41,27 +41,27 @@ public class Events<E> implements Serializable {
             this.data_eventDate = eventDate;
         }
 
-        public String getData_eventTime() {
+        public String getEventTime() {
             return data_eventTime;
         }
 
-        public void setData_eventTime(String eventTime) {
+        public void setEventTime(String eventTime) {
             this.data_eventTime = eventTime;
         }
 
-        public String getData_eventName() {
+        public String getEventName() {
             return data_eventName;
         }
 
-        public void setData_eventName(String eventName) {
+        public void setEventName(String eventName) {
             this.data_eventName = eventName;
         }
 
-        public String getData_eventDescribe() {
+        public String getEventDescribe() {
             return data_eventDescribe;
         }
 
-        public void setData_eventDescribe(String eventDescribe) {
+        public void setEventDescribe(String eventDescribe) {
             this.data_eventDescribe = eventDescribe;
         }
     }
