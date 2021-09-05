@@ -7,62 +7,63 @@ public class Events<E> implements Serializable {
         //FIXME: switch date and time to proper variable after basic table is established
         // ISSUE APPLIES TO DEFINITIONS, SETTERS, GETTERS, AND PRODUCTS
 
-        private  int data_eventID;
-        private  String data_eventDate;
-        private  String data_eventTime;
-        private  String data_eventName;
-        private  String data_eventDescribe;
+        private int eventID;
+        private String eventDate;
+        private String eventTime;
+        private String eventName;
+        private String eventDescribe;
 
         // Event Details constructor
         public Events() {}
 
         public Events(int eventID, String eventDate, String eventTime, String eventName, String eventDescribe) {
-            this.data_eventID = eventID;
-            this.data_eventDate = eventDate;
-            this.data_eventTime = eventTime;
-            this.data_eventName = eventName;
-            this.data_eventDescribe = eventDescribe;
-        }
+            this.eventID = eventID;
+            this.eventDate = eventDate;
+            this.eventTime = eventTime;
+            this.eventName = eventName;
+            this.eventDescribe = eventDescribe;
+       }
+
 
         // setters and getters
 
         public int getEventID() {
-            return data_eventID;}
+           return eventID;}
 
         public void setEventID(int eventID) {
-            this.data_eventID = eventID;
+            this.eventID = eventID;
         }
 
         public String getEventDate() {
-            return data_eventDate;
+            return eventDate;
         }
 
-        public void setData_eventDate(String eventDate) {
-            this.data_eventDate = eventDate;
+        public void seteventDate(String eventDate) {
+            this.eventDate = eventDate;
         }
 
         public String getEventTime() {
-            return data_eventTime;
+            return eventTime;
         }
 
         public void setEventTime(String eventTime) {
-            this.data_eventTime = eventTime;
+            this.eventTime = eventTime;
         }
 
         public String getEventName() {
-            return data_eventName;
+            return eventName;
         }
 
         public void setEventName(String eventName) {
-            this.data_eventName = eventName;
+            this.eventName = eventName;
         }
 
         public String getEventDescribe() {
-            return data_eventDescribe;
+            return eventDescribe;
         }
 
         public void setEventDescribe(String eventDescribe) {
-            this.data_eventDescribe = eventDescribe;
+            this.eventDescribe = eventDescribe;
         }
     }
 

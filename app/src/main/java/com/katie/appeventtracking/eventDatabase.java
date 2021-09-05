@@ -2,9 +2,6 @@ package com.katie.appeventtracking;
 
 import android.content.Context;
 import android.content.res.Resources;
-
-import com.google.android.gms.common.data.FreezableUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +29,9 @@ public class eventDatabase {
         }
     }
 
-    public List<Events> getEvents() {return getEvents();}
+    public List<Events> getEvents() {
+        return getEvents();
+    }
 
     public Events getEvents(int eventID) {
         for (Events events : mEvents) {
@@ -42,5 +41,4 @@ public class eventDatabase {
         }
         return null;
     }
-
 }

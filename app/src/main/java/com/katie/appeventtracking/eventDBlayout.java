@@ -18,6 +18,7 @@ public abstract class eventDBlayout extends SQLiteOpenHelper {
     private static final class EventTable {
         private static final String TABLE = "Events";
         private static final String COL_ID = "_ID";
+
         private static final String COL_DATE = "Date";
         private static final String COL_TIME = "Time";
         private static final String COL_NAME = "Name";
