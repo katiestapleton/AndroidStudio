@@ -49,7 +49,7 @@
     <string name="permissions">Permissions</string>
 
     <!-- Settings: Messages Preferences -->
-    <string name="notificationsTitle">Receive notifications</string>
+    <string name="notificationsTitle">Receive in-app notifications</string>
     <string name="replyTitle">Default reply action</string>
 
     <!-- Settings: Select preferences/permissions -->

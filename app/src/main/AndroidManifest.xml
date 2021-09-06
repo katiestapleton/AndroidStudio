@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.katie.appeventtracking">
 
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/my_backup_rules"
@@ -9,7 +11,8 @@
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppEventTracking">
+        android:theme="@style/Theme.AppEventTracking"
+        >
         <activity
             android:name=".UserLoginActivity"
             android:exported="true" />

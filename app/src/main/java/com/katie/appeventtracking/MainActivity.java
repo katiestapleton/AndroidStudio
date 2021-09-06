@@ -1,13 +1,17 @@
 package com.katie.appeventtracking;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -33,6 +37,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int SEND_SMS_CODE = -1;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+
     }
 
     @Override
@@ -57,6 +63,31 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    //global function to check or change permission
+    public void checkSMSPermission(String permission, int requestCode){
+        //check if permission granted
+        //if permission denied
+        if(ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
+            //request permission
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {permission}, requestCode);
+        } else {
+            //enable sending message
+            Toast.makeText(MainActivity.this, "Permission previously Granted", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //@Override
+    public void onRequestPermissionResult(int requestCode, @NonNull String[] permission, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permission, grantResults);
+
+        if(requestCode==SEND_SMS_CODE){
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+            }
+        }
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
