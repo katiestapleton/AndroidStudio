@@ -60,7 +60,7 @@
 
     <!--Sample Arrays: Event information-->
     <string-array name="eventsDateArray">
-        <item>11-05-2023</item>
+        <item>11–05-2023</item>
         <item>11-16-2023</item>
         <item>12-07-2023</item>
     </string-array>

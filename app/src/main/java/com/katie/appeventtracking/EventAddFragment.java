@@ -33,7 +33,7 @@ public class EventAddFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EventAddFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_SecondFragment_to_EventFragment);
             }
         });
 

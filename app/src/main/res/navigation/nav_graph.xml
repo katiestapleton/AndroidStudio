@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_events">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_EventFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_event_add">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_SecondFragment_to_EventFragment"
             app:destination="@id/FirstFragment" />
         <action
             android:id="@+id/action_SecondFragment_self"

@@ -1,10 +1,13 @@
 package com.katie.appeventtracking;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +21,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.katie.appeventtracking.databinding.ActivityMainBinding;
-import com.katie.appeventtracking.ui.login.LoginActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,6 +40,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final int SEND_SMS_CODE = -1;
+    private static final int PERMISSION_REQUEST_SEND_SMS = 0;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -50,11 +53,40 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        // navigation bar
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        // based on source: https://www.youtube.com/watch?v=n7uiA97RW88
+        //check if send SMS permission is not granted
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED) {
+            // if permission is not granted, check if user has
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
+                Toast.makeText(MainActivity.this, "Permission previously Granted", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                //popup asking for SMS permission
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, PERMISSION_REQUEST_SEND_SMS);
+            }
+        }
+    }
 
+    // method to check SMS permission and send response message to user
+    //@Override
+    public void onRequestPermissionResults(int requestCode, String permissions[], int[] grantResults) {
+        // checks requestCode
+        switch (requestCode) {
+            case PERMISSION_REQUEST_SEND_SMS: {
+                // sends permission granted response
+                if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "SMS authorized. You can now receive external alerts for upcoming events.", Toast.LENGTH_LONG).show();
+                } else {
+                //send permission denied response
+                    Toast.makeText(this, "SMS denied. You will not receive external alerts for upcoming events.", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 
     @Override
@@ -64,31 +96,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    //global function to check or change permission
-    public void checkSMSPermission(String permission, int requestCode){
-        //check if permission granted
-        //if permission denied
-        if(ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
-            //request permission
-            ActivityCompat.requestPermissions(MainActivity.this, new String[] {permission}, requestCode);
-        } else {
-            //enable sending message
-            Toast.makeText(MainActivity.this, "Permission previously Granted", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    //@Override
-    public void onRequestPermissionResult(int requestCode, @NonNull String[] permission, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permission, grantResults);
-
-        if(requestCode==SEND_SMS_CODE){
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-            }
-        }
-    }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -96,17 +103,13 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        //
         if (id == R.id.userAccount) {
-            Intent myAccount = new Intent(MainActivity.this, LoginActivity.class);
+            Intent myAccount = new Intent(MainActivity.this, UserLoginActivity.class);
             startActivity(myAccount);
             return true;
         }
 
-        if (id == R.id.changeSettings) {
-            Intent mySettings = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(mySettings);
-            return true;
-        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.requestHelp) {
@@ -122,4 +125,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }
