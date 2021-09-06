@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.katie.appeventtracking.FirstFragment"
+        android:name="com.katie.appeventtracking.EventsFragment"
         android:label="@string/firstFrag_eventOverview"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_events">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.katie.appeventtracking.SecondFragment"
+        android:name="com.katie.appeventtracking.EventAddFragment"
         android:label="@string/secondFrag_manageEvent"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_event_add">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
@@ -28,11 +28,7 @@
             android:id="@+id/action_SecondFragment_self"
             app:destination="@id/SecondFragment" />
     </fragment>
-    <activity
-        android:id="@+id/loginActivity3"
-        android:name="com.katie.appeventtracking.ui.login.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
+
     <activity
         android:id="@+id/mainActivity3"
         android:name="com.katie.appeventtracking.MainActivity"

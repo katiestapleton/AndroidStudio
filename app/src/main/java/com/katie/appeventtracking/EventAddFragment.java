@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.katie.appeventtracking.databinding.FragmentSecondBinding;
+import com.katie.appeventtracking.databinding.FragmentEventAddBinding;
 
-public class SecondFragment extends Fragment {
+public class EventAddFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentEventAddBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentEventAddBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,11 +29,10 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         binding.returnFromAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
+                NavHostFragment.findNavController(EventAddFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
@@ -41,7 +40,7 @@ public class SecondFragment extends Fragment {
         binding.createUpdateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //NavHostFragment.findNavController(SecondFragment.this)
+                //NavHostFragment.findNavController(EventAddFragment.this)
                 //        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
