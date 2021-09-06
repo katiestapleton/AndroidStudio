@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.katie.appeventtracking.ui.login.LoginActivity;
-
 public class UserLoginActivity extends AppCompatActivity {
 
     EditText username, password;
@@ -17,17 +15,18 @@ public class UserLoginActivity extends AppCompatActivity {
 
     // source: check for email pattern https://www.codebrainer.com/blog/registration-form-in-android-check-email-is-valid-is-empty
     // source: authentication https://developer.android.com/reference/android/accounts/AbstractAccountAuthenticator
+    // source: adding in a limited # of tries  https://github.com/Dheeraj22/Professor_DK/blob/master/Simple%20Login%20Screen%20App%20Latest/E01/app/src/main/java/com/example/simpleloginapp/MainActivity.java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
 
         // assigns values to layout items
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
 
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnNewUser = (Button) findViewById(R.id.btnNewUser);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnNewUser = findViewById(R.id.btnNewUser);
 
 
         // when login button is clicked, checks username and password
