@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_login.xml" value="0.67" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_login2.xml" value="0.2598958333333333" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_main_login.xml" value="0.2598958333333333" />
-        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_user_login.xml" value="0.2598958333333333" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_user_login.xml" value="0.4591194968553459" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/settings_activity.xml" value="0.5092592592592593" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/menu/menu_main.xml" value="0.25625" />
       </map>
     </option>
