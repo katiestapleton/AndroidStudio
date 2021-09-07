@@ -86,6 +86,8 @@
 
     <!--new Strings-->
     <string name="add">add</string>
+    <string name="all">All</string>
+    <string name="space1">&#160;</string>
 
 
 </resources>

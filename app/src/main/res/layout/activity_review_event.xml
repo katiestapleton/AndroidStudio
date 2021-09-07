@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ReviewEvent">
 
+    <!-- ALT TO FRAG EVENT. NOT IN USE-->
+
     <ListView
         android:id="@+id/LVReviewEvent"
         android:layout_width="395dp"
