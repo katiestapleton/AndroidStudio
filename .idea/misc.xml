@@ -7,12 +7,15 @@
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_login2.xml" value="0.2598958333333333" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_main_login.xml" value="0.2598958333333333" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_manage_event.xml" value="0.5" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_modify_event.xml" value="0.31354166666666666" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_permissions.xml" value="0.1" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_primary.xml" value="0.45677083333333335" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_review_event.xml" value="0.2994791666666667" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/activity_user_login.xml" value="0.4591194968553459" />
-        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/content_main.xml" value="0.19166666666666668" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/fragment_dashboard.xml" value="0.4083333333333333" />
-        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/fragment_event_add.xml" value="0.34010416666666665" />
+        <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/fragment_event_add.xml" value="0.33" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/fragment_event_update.xml" value="0.40572916666666664" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/fragment_events.xml" value="0.40572916666666664" />
         <entry key="..\:/ladyg/Documents/coding projects/Android Studio/AppEventTracking/app/src/main/res/layout/fragment_home.xml" value="0.4083333333333333" />

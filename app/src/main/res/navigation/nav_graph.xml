@@ -34,5 +34,15 @@
         android:name="com.katie.appeventtracking.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/manageEvent"
+        android:name="com.katie.appeventtracking.ManageEvent"
+        android:label="activity_manage_event"
+        tools:layout="@layout/activity_manage_event" />
+    <activity
+        android:id="@+id/userLoginActivity"
+        android:name="com.katie.appeventtracking.UserLoginActivity"
+        android:label="activity_user_login"
+        tools:layout="@layout/activity_user_login" />
 
 </navigation>

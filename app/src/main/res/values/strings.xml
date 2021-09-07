@@ -3,6 +3,7 @@
     <!-- Screen titles-->
     <string name="firstFrag_eventOverview">Event Overview</string>
     <string name="secondFrag_manageEvent">Manage Event Details</string>
+    <string name="manageEvent">Event Information</string>
     <string name="appName">AppEventTracking</string>
     <string name="AppNameTitle">Life\'s Event Tracker</string>
     <string name="loginTitle">User account login</string>
@@ -33,7 +34,7 @@
     <string name="welcome">"Welcome !"</string>
 
     <!-- Event information -->
-    <string name="calendarDate">Date</string>
+    <string name="eventDate">Date</string>
     <string name="eventTime">Time</string>
     <string name="eventName">Event Name</string>
     <string name="eventDescribe">Description</string>
