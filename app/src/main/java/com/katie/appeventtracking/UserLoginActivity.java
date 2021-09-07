@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,9 @@ public class UserLoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnNewUser = findViewById(R.id.btnNewUser);
 
+        // instantiates userDatabase
+        Database database = new Database(getApplicationContext());
+
         // when login button is clicked, checks username and password
 
         //SAME AS: btnNewLogin.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +59,7 @@ public class UserLoginActivity extends AppCompatActivity {
 
         // when "create new account" button is clicked, adds new user
         btnNewUser.setOnClickListener(view -> {
+
             //retrieve user input
             String user = username.getText().toString();
             String pass = password.getText().toString();
@@ -67,5 +72,8 @@ public class UserLoginActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
         });
+
     }
+
+
 }

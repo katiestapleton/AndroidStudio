@@ -1,5 +1,6 @@
 package com.katie.appeventtracking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,9 @@ public class EventsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EventsFragment.this)
-                        .navigate(R.id.action_EventFragment_to_SecondFragment);
+                      .navigate(R.id.action_EventFragment_to_SecondFragment);
+                //Intent intent = new Intent(getContext(), ManageEvent.class);
+                //startActivity(intent);
             }
         });
 

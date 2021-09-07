@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.telephony.SmsManager;
 import android.view.View;
 
 import androidx.core.app.ActivityCompat;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED) {
             // if permission is not granted, check if user has
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
+                //send messages (unsure on this part of the "if". check video)
                 Toast.makeText(MainActivity.this, "Permission previously Granted", Toast.LENGTH_SHORT).show();
             }
             else {
@@ -87,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    // send SMS message
+    protected void sendSMSMess(){
     }
 
     @Override
