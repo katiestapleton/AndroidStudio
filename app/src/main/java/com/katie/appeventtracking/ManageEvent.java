@@ -66,9 +66,9 @@ public class ManageEvent extends AppCompatActivity {
             String sql = "insert into records(date,time,name,describe)values(?, ?, ?)";
             SQLiteStatement statement = db.compileStatement(sql);
             statement.bindString(1, date);
-            statement.bindString(1, time);
-            statement.bindString(1, name);
-            statement.bindString(1, describe);
+            statement.bindString(2, time);
+            statement.bindString(3, name);
+            statement.bindString(4, describe);
             statement.execute();
             //message sent to user
             Toast.makeText(this, "Event added", Toast.LENGTH_SHORT).show();
