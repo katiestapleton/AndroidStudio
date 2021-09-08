@@ -62,6 +62,8 @@ public class ManageEvent extends AppCompatActivity {
 
 
 
+            // raw query
+            https://abhiandroid.com/database/operation-sqlite.html
             //make statement reusable
             String sql = "insert into records(date,time,name,describe)values(?, ?, ?, ?)";
             SQLiteStatement statement = db.compileStatement(sql);

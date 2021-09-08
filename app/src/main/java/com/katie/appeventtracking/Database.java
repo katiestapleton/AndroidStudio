@@ -2,6 +2,7 @@ package com.katie.appeventtracking;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -62,6 +63,7 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // EVENTS - CRUD
     // add event to DB
     public long addEvent(Event event) {
         SQLiteDatabase db = getWritableDatabase();
@@ -75,5 +77,72 @@ public class Database extends SQLiteOpenHelper {
         long eventId = db.insert(EventTable.TABLE, null, values);
         return eventId;
     }
+
+    // read event from DB
+    public void getEvent(Event mId) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        String sql = "select * from " + EventTable.TABLE + " where rating = ?";
+        Cursor cursor = db.rawQuery(sql, new String[] {});
+        if (cursor.moveToFirst()) {
+            do {
+                long id = cursor.getLong(0);
+                String user = cursor.getString(1);
+                String pass = cursor.getString(2);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+    }
+
+    // update event from DB
+    public void updateEvent(Event event) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(EventTable.COL_ID, event.getmId());
+        values.put(EventTable.COL_DATE, event.getmDate());
+        values.put(EventTable.COL_TIME, event.getmTime());
+        values.put(EventTable.COL_NAME, event.getmName());
+        values.put(EventTable.COL_DESC, event.getmDescribe());
+
+        db.update(EventTable.TABLE, values, EventTable.COL_ID + " = " + event.getmId(), null);
+    }
+
+    // delete event from DB
+    public void deleteEvent(Event eventId) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.delete(EventTable.TABLE,EventTable.COL_ID + " = " + eventId, null);
+    }
+
+    // USER
+    // add new user
+    public long addUser(User user) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(UserTable.COL_USER, user.getmUser());
+        values.put(UserTable.COL_PASS, user.getmPass());
+
+        long userId = db.insert(UserTable.TABLE, null, values);
+        return userId;
+    }
+
+    // read user/pass by reading user data first
+    public void getUserbyName(String mUser) {
+        User users = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String sql = "select * from " + UserTable.TABLE + " where " + UserTable.COL_USER + " = ?";
+        Cursor cursor = db.rawQuery(sql,new String[] { mUser });
+        if(cursor.moveToFirst()) {
+            users = new User();
+            long id = cursor.getLong(0);
+            String user = cursor.getString(1);
+            String pass = cursor.getString(2);
+        }
+
+    }
+
 
 }
