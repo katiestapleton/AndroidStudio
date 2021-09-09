@@ -70,8 +70,8 @@ public class Database extends SQLiteOpenHelper {
     // add event to event table
     public long addEvent(Event event) {
         SQLiteDatabase db = getWritableDatabase();
-
         ContentValues values = new ContentValues();
+
         values.put(EventTable.COL_DATE, event.getmDate());
         values.put(EventTable.COL_TIME, event.getmTime());
         values.put(EventTable.COL_NAME, event.getmName());
@@ -81,8 +81,8 @@ public class Database extends SQLiteOpenHelper {
         return eventId;
     }
 
-    // read event in event table
-    public void getEvent(Event mId) {
+    // read one event in event table
+    public void readEvent(Event mId) {
         SQLiteDatabase db = getReadableDatabase();
 
         String sql = "select * from " + EventTable.TABLE + " where rating = ?";
@@ -90,13 +90,28 @@ public class Database extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 long id = cursor.getLong(0);
-                String user = cursor.getString(1);
-                String pass = cursor.getString(2);
+                String date = cursor.getString(1);
+                String time = cursor.getString(2);
+                String name = cursor.getString(3);
+                String describe = cursor.getString(4);
             } while (cursor.moveToNext());
         }
         cursor.close();
     }
 
+    // source: https://github.com/stevdza-san/SQLite_Android-Complete_Tutorial/blob/master/app/src/main/java/com/jovanovic/stefan/sqlitetutorial/MyDatabaseHelper.java
+    // read all events in event table
+    Cursor readAllEvents(){
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = null;
+        String query = "select * FROM " + EventTable.TABLE;
+        if(EventTable.TABLE != null) {
+            cursor = db.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
 
 
     // update event in event table
@@ -111,6 +126,13 @@ public class Database extends SQLiteOpenHelper {
         values.put(EventTable.COL_DESC, event.getmDescribe());
 
         db.update(EventTable.TABLE, values, EventTable.COL_ID + " = " + event.getmId(), null);
+        /* source: https://github.com/stevdza-san/SQLite_Android-Complete_Tutorial/blob/master/app/src/main/java/com/jovanovic/stefan/sqlitetutorial/MyDatabaseHelper.java
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        }
+         */
     }
 
     // delete event in event table
