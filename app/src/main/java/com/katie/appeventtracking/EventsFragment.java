@@ -48,6 +48,8 @@ public class EventsFragment extends Fragment {
                         .navigate(R.id.action_EventFragment_to_SecondFragment);
             }
         });
+
+
     }
 
     @Override

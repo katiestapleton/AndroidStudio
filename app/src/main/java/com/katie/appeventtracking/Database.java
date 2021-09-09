@@ -25,6 +25,7 @@ public class Database extends SQLiteOpenHelper {
         return mEventDB;
     }
 
+    // ***** CREATE TABLES ******
     private static final class EventTable {
         private static final String TABLE = "events";
         private static final String COL_ID = "_id";
@@ -63,8 +64,10 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // EVENTS - CRUD
-    // add event to DB
+    // ***** EVENTS *********************************
+    // ** CRUD functions using SQLite
+
+    // add event to event table
     public long addEvent(Event event) {
         SQLiteDatabase db = getWritableDatabase();
 
@@ -78,7 +81,7 @@ public class Database extends SQLiteOpenHelper {
         return eventId;
     }
 
-    // read event from DB
+    // read event in event table
     public void getEvent(Event mId) {
         SQLiteDatabase db = getReadableDatabase();
 
@@ -94,7 +97,9 @@ public class Database extends SQLiteOpenHelper {
         cursor.close();
     }
 
-    // update event from DB
+
+
+    // update event in event table
     public void updateEvent(Event event) {
         SQLiteDatabase db = getWritableDatabase();
 
@@ -108,15 +113,18 @@ public class Database extends SQLiteOpenHelper {
         db.update(EventTable.TABLE, values, EventTable.COL_ID + " = " + event.getmId(), null);
     }
 
-    // delete event from DB
+    // delete event in event table
     public void deleteEvent(Event eventId) {
         SQLiteDatabase db = getWritableDatabase();
 
         db.delete(EventTable.TABLE,EventTable.COL_ID + " = " + eventId, null);
     }
 
-    // USER
-    // add new user
+    // ***** USER *********************************
+    // ** create and read functions using SQLite
+    // ** currently does NOT offer password resets
+
+    // add new user to user table
     public long addUser(User user) {
         SQLiteDatabase db = getWritableDatabase();
 

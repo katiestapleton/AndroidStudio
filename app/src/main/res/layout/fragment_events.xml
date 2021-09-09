@@ -22,56 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/delete"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonUpdate"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_OV2"
-        app:layout_constraintVertical_bias="0.188" />
-
-    <Button
-        android:id="@+id/buttonUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/update"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAdd"
-        app:layout_constraintStart_toEndOf="@+id/buttonDelete"
-        app:layout_constraintTop_toTopOf="@+id/guideline_OV2"
-        app:layout_constraintVertical_bias="0.188" />
-
-    <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/add"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buttonUpdate"
-        app:layout_constraintTop_toTopOf="@+id/guideline_OV2"
-        app:layout_constraintVertical_bias="0.188" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_OV2"
         android:layout_width="wrap_content"
@@ -86,20 +36,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="60dp" />
 
-    <ListView
-        android:id="@+id/LVEvents"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_OV2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_OV1"
-        app:layout_constraintVertical_bias="1.0" />
-
     <LinearLayout
         android:id="@+id/LVListHeader"
         android:layout_width="375dp"
@@ -107,9 +43,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/LVEvents"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="72dp">
 
         <TextView
             android:id="@+id/hdrDate"
@@ -160,6 +96,56 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/delete"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonUpdate"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_OV2"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/update"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAdd"
+        app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+        app:layout_constraintTop_toTopOf="@+id/guideline_OV2"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/add"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonUpdate"
+        app:layout_constraintTop_toTopOf="@+id/guideline_OV2"
+        app:layout_constraintVertical_bias="0.188" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
