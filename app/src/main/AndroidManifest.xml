@@ -21,17 +21,19 @@
         <activity
             android:name=".UserLoginActivity"
             android:exported="true"
-            android:label="@string/loginTitle" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/AppNameTitle"
-            android:theme="@style/Theme.AppEventTracking.NoActionBar">
+            android:label="@string/loginTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/AppNameTitle"
+            android:theme="@style/Theme.AppEventTracking.NoActionBar">
         </activity>
     </application>
 
