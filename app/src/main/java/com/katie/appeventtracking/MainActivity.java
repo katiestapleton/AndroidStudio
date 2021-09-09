@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
             //      populate data in SMS body
             Intent sendIntent = new Intent(Intent.ACTION_VIEW);
             sendIntent.setData(Uri.parse("sms:" + "My Event Tracking Message"));
-            startActivity(sendIntent);
             // FIXME: text body is not showing in SMS
             // TODO: specific event time, name, description to message
             sendIntent.putExtra("sms_body", "Upcoming event today!!! See Tracking Application");
