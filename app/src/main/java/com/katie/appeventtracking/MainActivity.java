@@ -3,6 +3,7 @@ package com.katie.appeventtracking;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.icu.text.SimpleDateFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -80,23 +81,24 @@ public class MainActivity extends AppCompatActivity {
 
         // sends SMS for same-day events IF permission has been granted
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
-            //send alerts on same day only
-
             SimpleDateFormat sdf = new SimpleDateFormat("MM-DD-YYYY");
             String currentDate = sdf.format(new Date());
 
-            //TODO: today = date in event table
-            // make sure eventtable is osrted in desending order
-            // i = 0; currentDate== DATESQL[I], i++ .
-            /*
-            while () {
-                sendSMSMessage();
-
-            }
-            */
-
+            //send alerts for same day only
+            //TODO: add mech to sort event date by desc date
+            //TODO: check if today matches any date within table
+            //      while today = the event date in event table
+            //      ex: i = 0; currentDate == call event from eventtable[i], i++.
+            //      retrieve ID or specify location
+            //      populate data in SMS body
+            Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+            sendIntent.setData(Uri.parse("sms:" + "My Event Tracking Message"));
+            startActivity(sendIntent);
+            // FIXME: text body is not showing in SMS
+            // TODO: specific event time, name, description to message
+            sendIntent.putExtra("sms_body", "Upcoming event today!!! See Tracking Application");
+            startActivity(sendIntent);
         }
-
 
     }
 
