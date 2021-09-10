@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 // creates event database
 public class Database extends SQLiteOpenHelper {
-
     private static final String DATABASE_NAME = "events.db";
     private static final int VERSION = 1;
 
@@ -35,7 +34,7 @@ public class Database extends SQLiteOpenHelper {
         private static final String COL_DESC = "describe";
     }
 
-    private static final class UserTable {
+    public static final class UserTable {
         private static final String TABLE = "users";
         private static final String COL_ID = "_id";
         private static final String COL_USER = "user";
@@ -55,6 +54,7 @@ public class Database extends SQLiteOpenHelper {
                 UserTable.COL_ID + " integer primary key autoincrement, " +
                 UserTable.COL_USER + " text, " +
                 UserTable.COL_PASS + " text)");
+
     }
 
     @Override
@@ -68,10 +68,11 @@ public class Database extends SQLiteOpenHelper {
     // ** CRUD functions using SQLite
 
     // add event to event table
-    public long addEvent(Event event) {
+    public long addEvent(String date, String time, String name, String describe) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        Event event = new Event();
         values.put(EventTable.COL_DATE, event.getmDate());
         values.put(EventTable.COL_TIME, event.getmTime());
         values.put(EventTable.COL_NAME, event.getmName());
@@ -115,9 +116,10 @@ public class Database extends SQLiteOpenHelper {
 
 
     // update event in event table
-    public void updateEvent(Event event) {
+    public void updateEvent(int ID, String date, String time, String name, String description) {
         SQLiteDatabase db = getWritableDatabase();
 
+        Event event = new Event();
         ContentValues values = new ContentValues();
         values.put(EventTable.COL_ID, event.getmId());
         values.put(EventTable.COL_DATE, event.getmDate());
@@ -147,24 +149,25 @@ public class Database extends SQLiteOpenHelper {
     // ** currently does NOT offer password resets
 
     // add new user to user table
-    public long addUser(User user) {
+    public long addUser(String newUser, String newPass) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(UserTable.COL_USER, user.getmUser());
-        values.put(UserTable.COL_PASS, user.getmPass());
+
+        values.put(UserTable.COL_USER, newUser);
+        values.put(UserTable.COL_PASS, newPass);
 
         long userId = db.insert(UserTable.TABLE, null, values);
         return userId;
     }
 
     // read user/pass by reading user data first
-    public void getUserbyName(String mUser) {
+    public void getUserbyName(String newUser, String newPass) {
         User users = null;
         SQLiteDatabase db = this.getReadableDatabase();
 
         String sql = "select * from " + UserTable.TABLE + " where " + UserTable.COL_USER + " = ?";
-        Cursor cursor = db.rawQuery(sql,new String[] { mUser });
+        Cursor cursor = db.rawQuery(sql,new String[] { newUser });
         if(cursor.moveToFirst()) {
             users = new User();
             long id = cursor.getLong(0);
