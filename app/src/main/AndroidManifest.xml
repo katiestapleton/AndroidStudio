@@ -13,12 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppEventTracking">
         <activity
-            android:name=".ManageEvent"
-            android:exported="true" />
-        <activity
-            android:name=".ReviewEvent"
-            android:exported="true" />
-        <activity
             android:name=".UserLoginActivity"
             android:exported="true"
             android:label="@string/loginTitle">
