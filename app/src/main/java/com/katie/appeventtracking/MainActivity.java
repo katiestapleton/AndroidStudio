@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.telephony.SmsManager;
 import android.view.View;
 
@@ -87,12 +88,16 @@ public class MainActivity extends AppCompatActivity {
             //send alerts for same day only
             //TODO: add mech to sort event date by desc date
             //TODO: check if today matches any date within table
-            //      while today = the event date in event table
-            //      ex: i = 0; currentDate == call event from eventtable[i], i++.
-            //      retrieve ID or specify location
-            //      populate data in SMS body
+            /*
+                while (today = the event date in event table
+                ex: i = 0; currentDate == call event from eventtable[i], i++.
+                retrieve ID or specify location
+                modify method below to add custom data
+            */
+
             Intent sendIntent = new Intent(Intent.ACTION_VIEW);
             sendIntent.setData(Uri.parse("sms:" + "My Event Tracking Message"));
+            startActivity(sendIntent);
             // FIXME: text body is not showing in SMS
             // TODO: specific event time, name, description to message
             sendIntent.putExtra("sms_body", "Upcoming event today!!! See Tracking Application");

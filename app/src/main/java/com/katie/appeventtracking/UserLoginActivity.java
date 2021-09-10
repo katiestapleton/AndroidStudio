@@ -46,6 +46,8 @@ public class UserLoginActivity extends AppCompatActivity {
             String pass = password.getText().toString();
 
             //check if username and password match
+            database.getUserbyName(user, pass);
+
             if(user.equals("user") && pass.equals("password")) {
                 Toast.makeText(UserLoginActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
                 // navigates to main screen
@@ -64,9 +66,8 @@ public class UserLoginActivity extends AppCompatActivity {
             String user = username.getText().toString();
             String pass = password.getText().toString();
 
-            //check if account already exists
-            // TODO: VERIFY CREDENTIALS
-            // check if meets requirements
+            //add account
+            database.addUser(user, pass);
 
             // navigates to main screen
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
